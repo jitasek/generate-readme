@@ -10,11 +10,11 @@ const questions = [
     message: "Enter project title: ",
     name: "Title",
   },
-  {
-    type: "input",
-    message: "Enter project description: ",
-    name: "Description",
-  },
+  //   {
+  //     type: "input",
+  //     message: "Enter project description: ",
+  //     name: "Description",
+  //   },
 
   // {
   //   type: "input",
@@ -42,12 +42,12 @@ const questions = [
   //   message: "Enter your email: ",
   //   name: "Questions",
   // },
-  // {
-  //   type: "checkbox",
-  //   message: "Select the license: ",
-  //   name: "License",
-  //   choices: ["MIT", "GPL", "BSD"],
-  // },
+  {
+    type: "checkbox",
+    message: "Select the license: ",
+    name: "License",
+    choices: ["MIT", "GPL", "BSD"],
+  },
 ];
 
 // set up an async function (3 steps) - prep the function to accept questions
@@ -57,21 +57,24 @@ const inquirerAsync = async (questions) => {
     // 2 step: prompt the questions to get answers (once complete, it will return me the answers)
     const answers = await inquirer.prompt(questions); // anynchronous operation, so I have to await for it to finish
 
-    // 3 step: log the answers
-    console.log(answers);
+    // 3 step: return the answers
+    return answers;
   } catch (error) {
     console.log(`Error: ${error.message}`);
     process.exit(0); // exits the code
   }
 };
 
-inquirerAsync(questions);
+// TODO: Create a function to initialize app - async function as it has to wait to get the answers
+const start = async () => {
+  // get answers
+  const answers = await inquirerAsync(questions);
+
+  // write to file
+  console.log(answers);
+};
+
+start();
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
