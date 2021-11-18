@@ -2,52 +2,52 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-// TODO: Create an array of questions for user input::
-
+// TODO: Create an array of questions for user input:
+// questions declared outside of the inquirerAsync function (-> readability)
 const questions = [
   {
     type: "input",
     message: "Enter project title: ",
     name: "Title",
   },
+  {
+    type: "input",
+    message: "Enter project description: ",
+    name: "Description",
+  },
+
+  {
+    type: "input",
+    message: "Enter installation instructions: ",
+    name: "Installation",
+  },
   //   {
   //     type: "input",
-  //     message: "Enter project description: ",
-  //     name: "Description",
+  //     message: "Enter usage info: ",
+  //     name: "Usage",
   //   },
-
-  // {
-  //   type: "input",
-  //   message: "Enter installation instructions: ",
-  //   name: "Installation",
-  // },
-  // {
-  //   type: "input",
-  //   message: "Enter usage info: ",
-  //   name: "Usage",
-  // },
-  // {
-  //   type: "input",
-  //   message: "Enter contribution guidelines: ",
-  //   name: "Contributors",
-  // },
-  // {
-  //   type: "input",
-  //   message: "Enter tests instructions: ",
-  //   name: "Tests",
-  // },
-  // {
-  //   type: "input",
-  //   message: "Enter your GitHub URL: ",
-  //   message: "Enter your email: ",
-  //   name: "Questions",
-  // },
-  {
-    type: "checkbox",
-    message: "Select the license: ",
-    name: "License",
-    choices: ["MIT", "GPL", "BSD"],
-  },
+  //   {
+  //     type: "input",
+  //     message: "Enter contribution guidelines: ",
+  //     name: "Contributors",
+  //   },
+  //   {
+  //     type: "input",
+  //     message: "Enter tests instructions: ",
+  //     name: "Tests",
+  //   },
+  //   {
+  //     type: "input",
+  //     message: "Enter your GitHub URL: ",
+  //     message: "Enter your email: ",
+  //     name: "Questions",
+  //   },
+  //   {
+  //     type: "checkbox",
+  //     message: "Select the license: ",
+  //     name: "License",
+  //     choices: ["MIT", "GPL", "BSD"],
+  //   },
 ];
 
 // set up an async function (3 steps) - prep the function to accept questions
@@ -65,16 +65,23 @@ const inquirerAsync = async (questions) => {
   }
 };
 
+// TODO: Create a function to write README file - function to append to a file
+const writeToFile = (path, data) => {
+  try {
+    fs.writeFileSync(path, data);
+    console.log(`Successfully written to ${path}!`);
+  } catch (error) {
+    console.log(`Failed to write to ${path}: ${error.message}`);
+  }
+};
+
 // TODO: Create a function to initialize app - async function as it has to wait to get the answers
-const start = async () => {
+const startApp = async () => {
   // get answers
   const answers = await inquirerAsync(questions);
 
   // write to file
-  console.log(answers);
+  writeToFile("README.md", JSON.stringify(answers));
 };
 
-start();
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+startApp();
