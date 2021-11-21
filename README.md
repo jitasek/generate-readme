@@ -12,10 +12,12 @@ A command-line application which accepts user's input and based on it dynamicall
 ## Motivation
 
 The purpose of this app is to practice working with node.js, npm, inquirer, fs, and more.
-
+<br>
+<br>
 Link to the deployed app: TBD
-Link to the video guide: https://drive.google.com/file/d/1E0dAvRmjQUrE5KG02HClb8i7FoRieMIm/view
-If the video quaility on the link above is not sufficient for you, please download the video guide file from the repo and play it locally.
+Link to the video guide: [here](https://drive.google.com/file/d/1E0dAvRmjQUrE5KG02HClb8i7FoRieMIm/view)
+
+(If the video quaility on the link above is not sufficient for you, please download the video guide file from the repo and play it locally.)
 <br>
 <br>
 
@@ -58,3 +60,9 @@ WHEN I enter my GitHub username, this is added to the section of the README enti
 WHEN I enter my email address, this is added to the section of the README entitled Questions, with instructions on how to reach me with additional questions.
 <br>
 WHEN I click on the links in the Table of Contents, I am taken to the corresponding section of the README.
+
+## Screenshot
+
+<br>
+
+![Image](./assets/images/app-screen-readme-generated.png)
