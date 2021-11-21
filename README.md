@@ -42,7 +42,7 @@ Position yourself in the js folder (cd assets/js) where the main index.js file i
 
 `node index.js`
 
-You will get prompted 9 times for input. After you are have selected an option/options in the last question, pres enter and a new README file gets generated with your answers in it. You will then find it in the js folder.
+You will get prompted 9 times for input. After you have selected your option(s) in the last prompt, press enter and a new README file will get generated with your answers in it. You will then find it in the js folder.
 <br>
 <br>
 
