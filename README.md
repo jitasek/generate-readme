@@ -14,7 +14,7 @@ A command-line application which accepts user's input and based on it dynamicall
 The purpose of this app is to practice working with node.js, npm, inquirer, fs, and more.
 <br>
 <br>
-Link to the deployed app: [here](TBD)
+Link to the deployed app: [here](https://jitasek.github.io/generate-readme/)
 <br>
 Link to the video guide: [here](https://drive.google.com/file/d/1E0dAvRmjQUrE5KG02HClb8i7FoRieMIm/view)
 
