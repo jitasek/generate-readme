@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
+const generateMarkdown = require("../utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input:
 // questions declared outside of the inquirerAsync function (-> readability)
@@ -21,33 +22,37 @@ const questions = [
     message: "Enter installation instructions: ",
     name: "Installation",
   },
-  //   {
-  //     type: "input",
-  //     message: "Enter usage info: ",
-  //     name: "Usage",
-  //   },
-  //   {
-  //     type: "input",
-  //     message: "Enter contribution guidelines: ",
-  //     name: "Contributors",
-  //   },
-  //   {
-  //     type: "input",
-  //     message: "Enter tests instructions: ",
-  //     name: "Tests",
-  //   },
-  //   {
-  //     type: "input",
-  //     message: "Enter your GitHub URL: ",
-  //     message: "Enter your email: ",
-  //     name: "Questions",
-  //   },
-  //   {
-  //     type: "checkbox",
-  //     message: "Select the license: ",
-  //     name: "License",
-  //     choices: ["MIT", "GPL", "BSD"],
-  //   },
+  {
+    type: "input",
+    message: "Enter usage info: ",
+    name: "Usage",
+  },
+  {
+    type: "input",
+    message: "Enter contribution guidelines: ",
+    name: "Contributing",
+  },
+  {
+    type: "input",
+    message: "Enter tests instructions: ",
+    name: "Tests",
+  },
+  {
+    type: "input",
+    message: "Enter your GitHub username: ",
+    name: "GitHub",
+  },
+  {
+    type: "input",
+    message: "Enter your email: ",
+    name: "Email",
+  },
+  {
+    type: "checkbox",
+    message: "Select the license: ",
+    name: "License",
+    choices: ["MIT", "GPL", "BSD"],
+  },
 ];
 
 // set up an async function (3 steps) - prep the function to accept questions
@@ -65,7 +70,7 @@ const inquirerAsync = async (questions) => {
   }
 };
 
-// TODO: Create a function to write README file - function to append to a file
+// TODO: Create a function to write README file - function to write to a file
 const writeToFile = (path, data) => {
   try {
     fs.writeFileSync(path, data);
@@ -79,9 +84,9 @@ const writeToFile = (path, data) => {
 const startApp = async () => {
   // get answers
   const answers = await inquirerAsync(questions);
-
+  const readmeContent = generateMarkdown(answers);
   // write to file
-  writeToFile("README.md", JSON.stringify(answers));
+  writeToFile("README.md", readmeContent);
 };
 
 startApp();
