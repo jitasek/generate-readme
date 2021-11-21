@@ -14,7 +14,8 @@ A command-line application which accepts user's input and based on it dynamicall
 The purpose of this app is to practice working with node.js, npm, inquirer, fs, and more.
 <br>
 <br>
-Link to the deployed app: TBD
+Link to the deployed app: [here](TBD)
+<br>
 Link to the video guide: [here](https://drive.google.com/file/d/1E0dAvRmjQUrE5KG02HClb8i7FoRieMIm/view)
 
 (If the video quaility on the link above is not sufficient for you, please download the video guide file from the repo and play it locally.)
