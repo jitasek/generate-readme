@@ -5,7 +5,7 @@
 
 ## Description
 
-A command-line application which accepts user's input and based on it dynamically generates a professional README file for a new project using the inquirer package.
+A command-line application which accepts user's input and based on it dynamically generates a professional README file for a new project using the inquirer package. The newly generated README will be found in the assets/js folder.
 <br>
 <br>
 
