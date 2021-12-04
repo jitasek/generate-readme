@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("../utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input:
+// Create an array of questions for user input:
 // questions declared outside of the inquirerAsync function (-> readability)
 const questions = [
   {
@@ -70,7 +70,7 @@ const inquirerAsync = async (questions) => {
   }
 };
 
-// TODO: Create a function to write README file - function to write to a file
+// Create a function to write README file - function to write to a file
 const writeToFile = (path, data) => {
   try {
     fs.writeFileSync(path, data);
@@ -80,7 +80,7 @@ const writeToFile = (path, data) => {
   }
 };
 
-// TODO: Create a function to initialize app - async function as it has to wait to get the answers
+// Create a function to initialize app - async function as it has to wait to get the answers
 const startApp = async () => {
   // get answers
   const answers = await inquirerAsync(questions);
